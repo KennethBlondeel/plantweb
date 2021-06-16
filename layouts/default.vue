@@ -1,8 +1,19 @@
 <template>
   <div>
+    <GlobalHeader />
     <Nuxt />
   </div>
 </template>
+
+<script>
+import GlobalHeader from '~/components/GlobalHeader.vue';
+
+export default {
+  name: 'GlobalLayout',
+  components: { GlobalHeader },
+};
+</script>
+
 
 <style>
 html {
