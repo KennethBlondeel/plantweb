@@ -1,0 +1,74 @@
+<template>
+  <header class="c-header">
+    <div class="c-header__container">
+      <img
+        src="http://157.230.126.154/assets/96e3df59-a481-44f6-b979-693df355bf90"
+        alt=""
+        class="c-header__logo"
+      />
+      <nav class="c-header__nav">
+        <nuxt-link
+          v-for="navItem in navItems"
+          :key="navItem.path"
+          :class="{
+            'c-header__nav__item': true,
+            'c-header__nav__item--active': navItem.path === $route.path,
+          }"
+          :to="navItem.path"
+        >
+          {{ navItem.label }}
+        </nuxt-link>
+      </nav>
+    </div>
+  </header>
+</template>
+
+<script>
+export default {
+  name: 'GlobalHeader',
+  data() {
+    return {
+      navItems: [
+        { path: '/', label: 'Home' },
+        { path: '/projects', label: 'projects' },
+        { path: '/allplants', label: 'plants' },
+      ],
+    };
+  },
+};
+</script>
+
+<style lang="scss">
+.c-header {
+  background-color: black;
+}
+
+.c-header__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-header__logo {
+  width: 35px;
+  height: 35px;
+  margin: 1em;
+}
+
+.c-header__nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.c-header__nav__item {
+  padding: 1em;
+  text-decoration: none;
+  color: white;
+}
+
+.c-header__nav__item--active{
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+</style>
