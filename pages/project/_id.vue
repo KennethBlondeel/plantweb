@@ -13,12 +13,15 @@
 </template>
 
 <script>
+import VueCarousel from 'vue-carousel';
+
 export default {
-  name: 'PlantIdPage',
+  name: 'ProjectIdPage',
+  components: { VueCarousel },
   data() {
     return {
       src: 'http://134.122.95.37/assets/',
-      plantData: null,
+      projectData: null,
       name: '',
       latin: '',
       images: '',
@@ -26,14 +29,14 @@ export default {
   },
   fetch() {
     console.log(this.$route.params.id);
-    return this.fetchPlant();
+    return this.fetchProject();
   },
 created(){
-    this.fetchPlant()
+    this.fetchProject()
 },
   methods: {
-    fetchPlant() {
-      this.$axios('items/plants/' + this.$route.params.id, {
+    fetchProject() {
+      this.$axios('items/projects/' + this.$route.params.id, {
         method: 'GET',
         headers: {},
         params: {

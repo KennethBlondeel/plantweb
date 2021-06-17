@@ -1,38 +1,39 @@
 <template>
-  <main class="p-all-plants">
-    <h1 class="p-all-plants__title">alle planten</h1>
+  <main class="p-all-projects">
+    <h1 class="p-all-projects__title">alle projecten</h1>
 
-    <div class="p-all-plants__product-list">
-      <PlantItem
-        v-for="plant in plantData"
-        :key="plant.id"
-        class="p-all-plants__product-list__item"
-        :plant="plant"
+    <div class="p-all-projects__product-list">
+      <ProjectItem
+        v-for="project in projectData"
+        :key="project.id"
+        class="p-all-projects__product-list__item"
+        :project="project"
       />
     </div>
   </main>
 </template>
 
 <script>
-import PlantItem from '~/components/PlantItem';
+import ProjectItem from '~/components/ProjectItem';
+
 export default {
-  name: 'AllPlantsPage',
-  components: { PlantItem },
+  name: 'AllProjectsPage',
+  components: { ProjectItem },
   data() {
     return {
-      plantData: {},
+      projectData: {},
       src: 'http://157.230.126.154/assets/',
     };
   },
   fetch() {
-    return this.fetchplants();
+    return this.fetchProjects();
   },
   created(){
-      this.fetchplants()
+      this.fetchProjects()
   },
   methods: {
-    fetchplants() {
-      this.$axios('items/plants', {
+    fetchProjects() {
+      this.$axios('items/projects', {
         method: 'GET',
         headers: {},
         params: {
@@ -42,7 +43,8 @@ export default {
       })
         .then((response) => {
           console.log(response);
-          this.plantData = response.data.data;
+          this.projectData = response.data.data;
+          console.log(this.projectData)
         })
         .catch((err) => {
           console.error(err);
@@ -53,25 +55,26 @@ export default {
 </script>
 
 <style lang="css">
-.p-all-plants{
+.p-all-projects{
   width: 100vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.p-all-plants__title{
+.p-all-projects__title{
   width: 100vw;
 }
-.p-all-plants__product-list{
+.p-all-projects__product-list{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     width: 70vw;
 }
 
-.p-all-plants__product-list__item{
+.p-all-projects__product-list__item{
       box-shadow: 0 5px 1.7px rgb(0 0 0 / 1%), 0 5.5px 2.4px rgb(0 0 0 / 2%),
   0 8.2px 3.6px rgb(0 0 0 / 3%), 0 1.8px 3.6px rgb(0 0 0 / 4%),
-  0 1.2px 4.4px rgb(0 0 0 / 4%), 0 7px 8px rgb(0 0 0 / 6%);
+  0 1.2px 4.4px rgb(0 0 0 / 4%), 0 7px 8px rgb(0 0 0 / 6%);;
     }
+
 </style>

@@ -13,7 +13,7 @@
       </div>
 
       <div class="c-plant-item__content">
-        <p>Price: € {{ plant.latin }}</p>
+        <p>{{ plant.latin }}</p>
       </div>
     </div>
   </article>
@@ -40,26 +40,36 @@ export default {
 
 <style lang="css">
 .c-plant-item {
-  background-color: black;
+  background-color: rgb(235, 235, 235);
+  color: black;
   border-radius: 15px;
   height: auto;
   margin: 0.5em;
 }
-.c-plant-item__image {
-    overflow: hidden;
-    max-height: 400px;
-}
+
+.c-plant-item__title{
+    text-decoration: none;
+    color: black;
+  }
+
+
+
 .c-plant-item__info {
-    margin: 1em;
+      margin: 1em;
+  }
+
+.c-plant-item__image{
+    overflow: hidden;
+    width: 100%;
 }
+
 .c-plant-item__image-container{
+      border-radius: 15px 15px 0 0;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.c-plant-item__image{
-    overflow: hidden;
-    width: 300px;
-}
+    height: 250px;
+    }
+
 </style>

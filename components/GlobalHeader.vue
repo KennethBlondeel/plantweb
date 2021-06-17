@@ -30,7 +30,7 @@ export default {
     return {
       navItems: [
         { path: '/', label: 'Home' },
-        { path: '/projects', label: 'projects' },
+        { path: '/allprojects', label: 'projects' },
         { path: '/allplants', label: 'plants' },
       ],
     };
@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="css">
 .c-header {
   background-color: black;
 }
@@ -65,10 +65,9 @@ export default {
   color: white;
 }
 
-.c-header__nav__item--active{
-  &:hover {
+.c-header__nav__item--active:hover {
     background-color: white;
     color: black;
   }
-}
+
 </style>
