@@ -13,7 +13,7 @@
       </div>
 
       <div class="c-project-item__content">
-        <p>{{ project.latin }}</p>
+        <p>{{ project.text_content }}</p>
       </div>
     </div>
   </article>
@@ -58,18 +58,15 @@ export default {
 }
 
 .c-project-item__image{
-    overflow: hidden;
-    min-height: 300px;
-    width: initial;
+    width: 100%;
+    height: unset;
 }
 
 .c-project-item__image-container{
     border-radius: 15px 0 0 15px;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 450px;
+    width: 250px;
     height: 300px;
 }
 

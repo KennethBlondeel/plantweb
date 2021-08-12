@@ -1,18 +1,13 @@
 <template>
   <header class="c-header">
     <div class="c-header__container">
-      <img
-        src="http://157.230.126.154/assets/96e3df59-a481-44f6-b979-693df355bf90"
-        alt=""
-        class="c-header__logo"
-      />
       <nav class="c-header__nav">
         <nuxt-link
           v-for="navItem in navItems"
           :key="navItem.path"
           :class="{
             'c-header__nav__item': true,
-            'c-header__nav__item--active': navItem.path === $route.path,
+
           }"
           :to="navItem.path"
         >
@@ -29,9 +24,10 @@ export default {
   data() {
     return {
       navItems: [
-        { path: '/', label: 'Home' },
+        { path: '/', label: 'home' },
         { path: '/allprojects', label: 'projects' },
         { path: '/allplants', label: 'plants' },
+        { path: '/contact', label: 'contact'}
       ],
     };
   },
@@ -40,7 +36,12 @@ export default {
 
 <style lang="css">
 .c-header {
-  background-color: black;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 40vw;
 }
 
 .c-header__container {
@@ -68,6 +69,6 @@ export default {
 .c-header__nav__item--active:hover {
     background-color: white;
     color: black;
-  }
+}
 
 </style>

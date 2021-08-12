@@ -54,19 +54,23 @@ export default {
 
 <style lang="css">
 .p-all-plants{
-  width: 100vw;
+  width: 100%;
+  height: 100vh;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1em;  
 }
 .p-all-plants__title{
-  width: 100vw;
+  width: 100%;
 }
 .p-all-plants__product-list{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 70vw;
+    width: 100%;
+    padding:  0 4em ;
+    overflow-y: scroll;
 }
 
 .p-all-plants__product-list__item{
