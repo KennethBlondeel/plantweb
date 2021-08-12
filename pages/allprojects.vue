@@ -56,19 +56,19 @@ export default {
 
 <style lang="css">
 .p-all-projects{
-  width: 100vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  padding: 1em;
 }
-.p-all-projects__title{
-  width: 100vw;
-}
+
 .p-all-projects__product-list{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 70vw;
+    width: 100%;
+    overflow-y: scroll;
 }
 
 .p-all-projects__product-list__item{
