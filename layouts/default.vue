@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="web-body">
     <GlobalHeader />
-    <Nuxt />
+    <div class="main-body">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
@@ -26,6 +28,17 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+
+
+.web-body{
+  display: flex;
+}
+
+.main-body{
+  height: 100vh;
+  width: 100%;
 }
 
 *,
