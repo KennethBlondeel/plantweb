@@ -2,6 +2,7 @@
   <div class="web-body">
     <GlobalHeader />
     <div class="main-body">
+      <AdminHeader />
       <Nuxt />
       <Notify />
     </div>
@@ -10,11 +11,12 @@
 
 <script>
 import GlobalHeader from '~/components/GlobalHeader.vue';
+import AdminHeader from '~/components/AdminHeader.vue';
 import Notify from '~/components/Notify';
 
 export default {
   name: 'GlobalLayout',
-  components: { GlobalHeader, Notify },
+  components: { GlobalHeader, Notify, AdminHeader },
 };
 </script>
 
@@ -82,4 +84,5 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
 </style>

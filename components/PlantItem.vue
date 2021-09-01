@@ -7,13 +7,13 @@
       <div>
         <NuxtLink :to="`/plant/${plant.id}`">
           <h2 class="c-plant-item__title">
-            {{ plant.name }}
+            {{ plant.latin }}
           </h2>
         </NuxtLink>
       </div>
 
       <div class="c-plant-item__content">
-        <p>{{ plant.latin }}</p>
+        <p>{{ plant.name }}</p>
       </div>
     </div>
   </article>
