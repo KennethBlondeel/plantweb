@@ -1,6 +1,6 @@
 <template>
   <main class="p-all-plants">
-    <h1 class="p-all-plants__title">alle planten</h1>
+    <h1 class="p-all-plants__title">alle planten!</h1>
     <div class="p-all-plants__product-list">
       <PlantItem
         v-for="plant in plantData"
