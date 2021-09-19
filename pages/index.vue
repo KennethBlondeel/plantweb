@@ -40,19 +40,23 @@ export default {}
 
 .p-home__card{
   background-color: white;
-  width: 900px;
-  height: 500px;
+  width: 55vw;
+  height: 60vh;
   display: flex;
   border-radius: 15px;
+  overflow: hidden;
 }
 
 .p-home__card-image-container{
-  height: 500px;
-
+  height: 100%;
+  width: 60vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .p-home__card-image{
-  height: 500px;
+  height: 100%;
   border-radius: 15px 0 0 15px;
 }
 

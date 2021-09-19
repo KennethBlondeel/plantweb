@@ -7,13 +7,13 @@
       <div>
         <NuxtLink :to="`/plant/${plant.id}`">
           <h2 class="c-plant-item__title">
-            {{ plant.name }}
+            {{ plant.latin }}
           </h2>
         </NuxtLink>
       </div>
 
       <div class="c-plant-item__content">
-        <p>{{ plant.latin }}</p>
+        <p>{{ plant.name }}</p>
       </div>
     </div>
   </article>
@@ -64,7 +64,7 @@ export default {
 }
 
 .c-plant-item__image-container{
-      border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0;
     overflow: hidden;
     display: flex;
     align-items: center;
