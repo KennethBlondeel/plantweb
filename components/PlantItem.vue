@@ -64,7 +64,7 @@ export default {
 }
 
 .c-plant-item__image-container{
-      border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0;
     overflow: hidden;
     display: flex;
     align-items: center;

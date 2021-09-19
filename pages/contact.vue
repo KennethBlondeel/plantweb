@@ -13,7 +13,7 @@
           class="contact-form__inputs"
           @submit="postRequest"
         >
-          <FormulateInput name="first_name" type="text" label="voornaam:" validation="required" validation-name="voornaam" />
+          <FormulateInput class="input" name="first_name" type="text" label="voornaam:" validation="required" validation-name="voornaam" />
           <FormulateInput name="last_name" type="text" label="achternaam:" validation="required" validation-name="achternaam"/>
           <FormulateInput name="email" type="email" label="email" validation="required|email" />
           <FormulateInput
@@ -51,6 +51,9 @@ export default {
         text_content: '',
       },
     };
+  },
+  beforeCreate(){
+    console.log('hi')
   },
   methods: {
     postRequest(data) {

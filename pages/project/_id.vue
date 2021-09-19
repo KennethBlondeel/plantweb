@@ -1,17 +1,43 @@
 <template>
   <main class="p-project-page">
     <div class="p-project-page__container">
-      <div class="p-project-page__image-container">
-              <img
-               class="p-project-page__image" :src="src + images" alt="" />
+      <div class="p-project-page__hooper">
+      <hooper>
+        <slide v-if="images.length >= 1">
+          <div class="p-project-page__image-container">
+          <img  class="p-project-page__image" :src="src +images[0]" alt="" />
+          </div>
+        </slide>
+        <slide v-if="images.length >= 2">
+          <div class="p-project-page__image-container">
+          <img  class="p-project-page__image" :src="src +images[1]" alt="" />
+          </div>
+        </slide>
+        <slide v-if="images.length >= 3">
+          <div class="p-project-page__image-container">
+          <img  class="p-project-page__image" :src="src +images[2]" alt="" />
+          </div>
+        </slide>
+        <slide v-if="images.length >= 4">
+          <div class="p-project-page__image-container">
+          <img  class="p-project-page__image" :src="src +images[3]" alt="" />
+          </div>
+        </slide>
+        <slide v-if="images.length >= 5">
+          <div class="p-project-page__image-container">
+          <img  class="p-project-page__image" :src="src +images[4]" alt="" />
+          </div>
+        </slide>
+        <hooper-pagination slot="hooper-addons"></hooper-pagination>
+      </hooper>
       </div>
       <div class="p-project-page__info-container">
         <div class="p-project-page__info">
           <h1>{{ bedrijf }}</h1>
           <h3>{{ year }}</h3>
-          <p>{{link}}</p>
+          <p>{{ link}}</p>
 
-          <p>{{text_content}}</p>
+          <p>{{ text_content}}</p>
         </div>
       </div>
     </div>
@@ -19,10 +45,11 @@
 </template>
 
 <script>
+import { Hooper ,Slide, Pagination as HooperPagination } from 'Hooper';
 
 export default {
   name: 'ProjectIdPage',
-  components: { },
+  components: { Slide, Hooper, HooperPagination },
   data() {
     return {
       src: 'http://134.122.95.37/assets/',
@@ -33,10 +60,6 @@ export default {
       link: '',
       images: [],
     };
-  },
-  fetch() {
-    console.log(this.$route.params.id);
-    return this.fetchProject();
   },
 created(){
     this.fetchProject()
@@ -73,22 +96,83 @@ created(){
 
 <style>
 .p-project-page{
-  padding: 2em;
+  margin: 4em 3em;
+}
+
+.p-project-page__hooper{
+  min-width: 400px;
+  max-width: 400px;
+  overflow: hidden;
+  margin: 0 2em 2em 0;
+}
+
+.hooper-slide{
+  width: 400px;
+  height: 400px;
+  display: table;
+  overflow: hidden;
+}
+
+.hooper-track{
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  width: 400px;
+}
+
+.hooper-sr-only{
+  display: none;
+}
+
+.hooper-indicators{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hooper{
+  width: 400px;
+}
+
+.hooper-indicator{
+  height: 15px;
+  width: 15px;
+  border-radius: 30px;
+  border: 1px solid  rgb(194, 209, 194);
+  background-color: rgb(194, 209, 194);
+  padding: 0em;
+  margin: 1em 0.2em 0;
 }
 
 .p-project-page__container{
   display: flex;
-}
-
-.p-project-page__image-container{
-  width: 50%;
+  flex-direction: row;
 }
 
 .p-project-page__image{
-  height: 300px;
+  min-height: 400px;
+  min-width: 400px;
+  object-fit: cover;
+  overflow: hidden;
 }
 
-.p-plant-page__info{
-  color: black;
+.p-project-page__image-container{
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.hooper-indicators li .is-active{
+  border: 1px solid rgba(0, 0, 0, 0.281);
+}
+
+::marker{
+  display: none;
+  content: '';
 }
 </style>

@@ -10,7 +10,7 @@
           :key="navItem.path"
           :class="{
             'c-header__nav__item': true,
-            'c-header__nav__item--active': navItem.path === $route.path ,
+            'c-header__nav__item--active': navItem.path === $route.path  ,
           }"
           :to="navItem.path"
         >
