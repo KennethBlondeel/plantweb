@@ -23,9 +23,7 @@ export default {
       src: 'http://157.230.126.154/assets/',
     };
   },
-  fetch() {
-    return this.fetchplants();
-  },
+
   created(){
       this.fetchplants()
   },

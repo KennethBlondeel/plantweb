@@ -58,16 +58,18 @@ export default {
 }
 
 .c-project-item__image{
-    width: 100%;
-    height: unset;
+    min-height: 100%;
+    max-height: 120%;
 }
 
 .c-project-item__image-container{
-    border-radius: 15px 0 0 15px;
     overflow: hidden;
+    min-width: 300px;
+    max-width: 300px;
     display: flex;
-    width: 250px;
-    height: 300px;
+    align-items: center;
+    justify-content: center;
+
 }
 
 </style>
