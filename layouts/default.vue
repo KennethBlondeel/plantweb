@@ -82,4 +82,15 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+@media (max-width:1350px){
+  .web-body{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+
 </style>

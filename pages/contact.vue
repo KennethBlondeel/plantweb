@@ -4,7 +4,7 @@
       <div class="contact-image"></div>
       <section class="contact-data__container">
         <p class="contact-data">
-          In the contact form below you can reach out to me if you would like me to work on a project that involves graphic design or frondend development. I try to answer every request whitin a week.
+          In the contact form below you can reach out to me if you would like me to work on a project that involves graphic design or frondend development. I try to answer every request within a week.
         </p>
       </section>
       <section class="contact-form">
@@ -52,9 +52,6 @@ export default {
       },
     };
   },
-  beforeCreate(){
-    console.log('hi')
-  },
   methods: {
     postRequest(data) {
       return this.$axios('/items/user_requests', {
@@ -79,44 +76,6 @@ export default {
 </script>
 
 <style>
-#formulate--contact-1, 
-#formulate--contact-2, 
-#formulate--contact-3,
-#formulate--contact-4,
-#formulate--contact-5{
-  width: 100%;
-  height: 30px;
-  margin: 0.5em 0;
-  border: rgb(194, 209, 194) 1px solid;
-  border-radius: 3px;
-}
-
-#formulate--contact-5{
-  height: 70px;
-}
-
-#formulate--contact-6{
-  width: 130px;
-  height: 30px;
-  background-color: rgb(194, 209, 194);
-  border: none;
-  border-radius: 3px;
-}
-
-.formulate-input-element--submit{
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.formulate-input-wrapper{
-  height: 100%;
-}
-
-.formulate-input{
-  margin: 0.5em 1em;
-}
-
 .contact-form{
   display: flex;
   align-items: center;

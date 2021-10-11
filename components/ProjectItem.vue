@@ -1,7 +1,7 @@
 <template>
   <article class="c-project-item">
     <div class="c-project-item__image-container">
-      <img class="c-project-item__image" :src="src + project.images[0].directus_files_id" alt="" />
+      <img class="c-project-item__image" :src="src + project.images[0].directus_files_id" alt="picture of the project logo" />
     </div>
     <div class="c-project-item__info">
       <div>
@@ -49,12 +49,13 @@ export default {
 }
 
 .c-project-item__title{
-    text-decoration: none;
     color: black;
+    text-decoration: underline rgb(235, 235, 235);
 }
 
 .c-project-item__info {
     margin: 1em;
+    overflow: hidden;
 }
 
 .c-project-item__image{
@@ -69,7 +70,19 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
+@media (max-width: 1000px){
+  .c-project-item__image-container{
+    min-width: 250px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 700px){
+  .c-project-item__image-container{
+    display: none;
+  }
 }
 
 </style>

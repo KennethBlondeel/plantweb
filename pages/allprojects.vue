@@ -42,9 +42,7 @@ export default {
         },
       })
         .then((response) => {
-          console.log(response);
           this.projectData = response.data.data;
-          console.log(this.projectData)
         })
         .catch((err) => {
           console.error(err);
@@ -77,7 +75,7 @@ export default {
   0 8.2px 3.6px rgb(0 0 0 / 3%), 0 1.8px 3.6px rgb(0 0 0 / 4%),
   0 1.2px 4.4px rgb(0 0 0 / 4%), 0 7px 8px rgb(0 0 0 / 6%);
   height: 250px;
-  overflow: hidden;
-    }
+  overflow: hidden;  
+}
 
 </style>

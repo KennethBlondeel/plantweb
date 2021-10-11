@@ -70,32 +70,31 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .p-login{
   height: 95vh;
-}
 
-.p-login__background{
+  &__background{
   height: 95vh;
   background-image: url("http://134.122.95.37/assets/6ce933ee-d233-48eb-97c6-1172f522e3d9");
   background-color: rgba(0, 0, 0, 0.384);
   background-size: cover;
+  }
 
-}
-
-.p-login__container{
+  &__container{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 100%;
-}
+  }
 
-.p-login__overlay{
+  &__overlay{
   background-color: white;
   padding: 3em;
   border-radius: 10px;
   width: 500px;
   height: 350px;
+  }
 }
 </style>

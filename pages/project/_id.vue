@@ -1,43 +1,43 @@
 <template>
   <main class="p-project-page">
     <div class="p-project-page__container">
-      <div class="p-project-page__hooper">
-      <hooper>
-        <slide v-if="images.length >= 1">
-          <div class="p-project-page__image-container">
-          <img  class="p-project-page__image" :src="src +images[0]" alt="" />
-          </div>
-        </slide>
-        <slide v-if="images.length >= 2">
-          <div class="p-project-page__image-container">
-          <img  class="p-project-page__image" :src="src +images[1]" alt="" />
-          </div>
-        </slide>
-        <slide v-if="images.length >= 3">
-          <div class="p-project-page__image-container">
-          <img  class="p-project-page__image" :src="src +images[2]" alt="" />
-          </div>
-        </slide>
-        <slide v-if="images.length >= 4">
-          <div class="p-project-page__image-container">
-          <img  class="p-project-page__image" :src="src +images[3]" alt="" />
-          </div>
-        </slide>
-        <slide v-if="images.length >= 5">
-          <div class="p-project-page__image-container">
-          <img  class="p-project-page__image" :src="src +images[4]" alt="" />
-          </div>
-        </slide>
-        <hooper-pagination slot="hooper-addons"></hooper-pagination>
-      </hooper>
-      </div>
       <div class="p-project-page__info-container">
+        <div class="p-project-page__hooper">
+        <hooper>
+          <slide v-if="images.length >= 1">
+            <div class="p-project-page__image-container">
+            <img  class="p-project-page__image" :src="src +images[0]" alt="" />
+            </div>
+          </slide>
+          <slide v-if="images.length >= 2">
+            <div class="p-project-page__image-container">
+            <img  class="p-project-page__image" :src="src +images[1]" alt="" />
+            </div>
+          </slide>
+          <slide v-if="images.length >= 3">
+            <div class="p-project-page__image-container">
+            <img  class="p-project-page__image" :src="src +images[2]" alt="" />
+            </div>
+          </slide>
+          <slide v-if="images.length >= 4">
+            <div class="p-project-page__image-container">
+            <img  class="p-project-page__image" :src="src +images[3]" alt="" />
+            </div>
+          </slide>
+          <slide v-if="images.length >= 5">
+            <div class="p-project-page__image-container">
+            <img  class="p-project-page__image" :src="src +images[4]" alt="" />
+            </div>
+          </slide>
+          <hooper-pagination slot="hooper-addons"></hooper-pagination>
+        </hooper>
+        </div>
         <div class="p-project-page__info">
           <h1>{{ bedrijf }}</h1>
           <h3>{{ year }}</h3>
-          <p>{{ link}}</p>
 
-          <p>{{ text_content}}</p>
+          <p class="p-project-page__text">{{ text_content}}</p>
+          <p class="p-project-page__text">{{ text_content_2}}</p>
         </div>
       </div>
     </div>
@@ -57,6 +57,7 @@ export default {
       bedrijf: '',
       year: '',
       text_content: '',
+      text_content_2: '',
       link: '',
       images: [],
     };
@@ -74,17 +75,16 @@ created(){
         },
       })
         .then((data) => {
-          console.log(data);
           this.projectData = data.data.data;
           this.bedrijf = this.projectData.bedrijf;
           this.year = this.projectData.year;
           this.text_content = this.projectData.text_content;
+          this.text_content_2 = this.projectData.text_content_2;
           this.link = this.projectData.link;
 
          for (let i = 0; i < this.projectData.images.length; i++ ){
           this.images.push(this.projectData.images[i].directus_files_id);
           }
-          console.log(this.images)
         })
         .catch((err) => {
           console.error(err);
@@ -103,7 +103,9 @@ created(){
   min-width: 400px;
   max-width: 400px;
   overflow: hidden;
-  margin: 0 2em 2em 0;
+  margin-right: 3em;
+  position: relative;
+  float: left;
 }
 
 .hooper-slide{
@@ -167,6 +169,10 @@ created(){
   border-radius: 5px;
 }
 
+.p-project-page__text{
+  margin-top: 1.5em;
+}
+
 .hooper-indicators li .is-active{
   border: 1px solid rgba(0, 0, 0, 0.281);
 }
@@ -174,5 +180,17 @@ created(){
 ::marker{
   display: none;
   content: '';
+}
+
+@media (max-width: 1000px){
+  .p-project-page__container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .p-project-page__hooper{
+    margin: 0 0 2em 0;
+  }
 }
 </style>

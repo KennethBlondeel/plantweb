@@ -2,7 +2,8 @@
 // -----------------------------------------------------------------------------
 
 .formulate-input {
-    width: 70%;
+    width: 100%;
+    margin-bottom: 1em;
     // global wrapper styles
   
     .formulate-input-label {
@@ -12,12 +13,15 @@
     .formulate-input-element {
       // Global field-level wrapper styles
       max-width: unset;
-  
+
       input,
       textarea {
         background-color: #fff;
+        width: 100%;
+        border: rgb(194, 209, 194) 1px solid;
+        border-radius: 3px;
       }
-    }
+}
   
     .formulate-input-help {
       // Global help text styles
@@ -25,11 +29,12 @@
   
     .formulate-input-errors {
       // Global error message list wrapper
+      margin: 0em;
     }
   
     .formulate-input-error,
     .formulate-file-upload-error {
-      // Error message styles
+      margin-bottom: 0em;
     }
   
     .formulate-input-group-item {
@@ -42,6 +47,7 @@
     &[data-classification='text'] {
       input {
         // Style all text-like input elements
+        height: 30px;
       }
     }
   
@@ -59,7 +65,7 @@
   
     &[data-classification='textarea'] {
       textarea {
-        // Style textareas
+        height: 70px;
       }
     }
   
@@ -68,7 +74,14 @@
   
     &[data-classification='button'] {
       button {
-        // Style button inputs
+        width: 130px;
+        height: 30px;
+        background-color: rgb(194, 209, 194);
+        border: none;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   

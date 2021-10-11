@@ -50,6 +50,7 @@ export default {
 .c-plant-item__title{
     text-decoration: none;
     color: black;
+    text-decoration: underline rgb(235, 235, 235);
   }
 
 
@@ -70,6 +71,7 @@ export default {
     align-items: center;
     justify-content: center;
     height: 250px;
-    }
+}
+
 
 </style>

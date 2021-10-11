@@ -79,7 +79,6 @@ export default {
           this.plantData = data.data.data;
           
           for(let i = 0; i< this.plantData.images.length ; i++){
-            console.log(i)
             this.images.push( this.plantData.images[i].directus_files_id);
           }
         })
@@ -167,5 +166,22 @@ export default {
 ::marker{
   display: none;
   content: '';
+}
+
+@media (max-width: 1000px){
+  .p-plant-page__container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .p-plant-page__hooper{
+    margin: 0 0 2em 0;
+  }
+
+  .p-plant-page__info-container{
+    width: 100%;
+    padding-bottom: 1em;
+  }
 }
 </style>
