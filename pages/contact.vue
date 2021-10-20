@@ -111,4 +111,26 @@ export default {
   text-align: center;
 }
 
+@media (max-width: 700px){
+  .contact-data__container{
+    height: unset;
+    padding: 1em 0;
+  }
+
+  .contact-form{
+    height: unset;
+  }
+
+  .contact-form__inputs{
+    margin: 2em 3em;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1350px){
+  .contact-form__inputs{
+    justify-content: initial;
+  }
+}
+
 </style>

@@ -10,6 +10,7 @@
             {{ project.bedrijf }}
           </h2>
         </NuxtLink>
+        <p class="c-project-item__year">{{project.year}}</p>
       </div>
 
       <div class="c-project-item__content">
@@ -38,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style lang="scss">
 .c-project-item {
     display: flex;
     background-color: rgb(235, 235, 235);
@@ -50,7 +51,7 @@ export default {
 
 .c-project-item__title{
     color: black;
-    text-decoration: underline rgb(235, 235, 235);
+    text-decoration: underline $light-green;
 }
 
 .c-project-item__info {
@@ -72,16 +73,43 @@ export default {
     justify-content: center;
 }
 
-@media (max-width: 1000px){
-  .c-project-item__image-container{
-    min-width: 250px;
-    max-width: 250px;
-  }
+.c-project-item__year{
+  display: none;
 }
 
+
 @media (max-width: 700px){
-  .c-project-item__image-container{
+  .c-project-item__content{
     display: none;
+  }
+
+.c-project-item__year{
+  display: unset;
+}
+
+  .c-project-item{
+    flex-direction: row;
+  }
+
+  .c-project-item{
+    flex-direction: column;
+    height: unset;
+  }
+
+  .c-project-item__image-container{
+    max-height: 250px;
+    width: 100%;
+    max-width: unset;
+    min-width: unset;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+
+  .c-project-item__image{
+    width: 100%;
+    min-height: unset;
+    max-height: unset;
   }
 }
 

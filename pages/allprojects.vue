@@ -78,4 +78,33 @@ export default {
   overflow: hidden;  
 }
 
+@media (max-width : 1350px){
+  .p-all-projects{
+    justify-content: unset;
+    align-content: unset;
+  }
+}
+
+@media (max-width: 700px){
+  .p-all-projects{
+    height: unset;
+  }
+
+  .p-all-projects__product-list{
+    padding: 0 2em
+  }
+
+}
+
+@media (max-width: 700px){
+  .p-all-projects__product-list__item{
+    height: unset;
+  }
+
+  .p-all-projects__product-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 </style>

@@ -134,3 +134,9 @@
       // form errors (not specific to a field)
     }
   }
+
+  @media (max-width: 1350px){
+    .formulate-input{
+      padding: 0.5em 0;
+    }
+  }

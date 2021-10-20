@@ -48,23 +48,23 @@ export default {
     isLoggedIn() {
       return this.$store.getters['auth/isLoggedIn'];
     },
+    isAdmin(){
+     return this.$store.getters['auth/isAdmin'];
+    }
   },
   watch: {
-    isLoggedIn(newVal) {
-        console.log(newVal)
+    isAdmin(newVal) {
+      if(newVal){
+        this.$router.push('/admin/user-requests')
+        this.$root.$emit('notify', 'Welkom user!');
+      }
     },
   },
   methods: {
     login() {
       this.$store.dispatch('auth/login', this.loginBody);
-      this.$root.$emit('notify', 'Welkom user!');
-      if(this.$store.getters['auth/isAdmin'] === true){
-          this.$router.push('/admin/user-requests');
-      }else{
-      this.$root.$emit('notify', "user can't do anything extra dan public users");
-      }
-      this.email = '';
-      this.password = '';
+      this.email='';
+      this.password='';
     },
   },
 };
@@ -95,6 +95,12 @@ export default {
   border-radius: 10px;
   width: 500px;
   height: 350px;
+  }
+}
+
+@media (max-width: 700px){
+  .p-login__overlay{
+    width: 250px;
   }
 }
 </style>

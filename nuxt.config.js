@@ -1,7 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  ssr: false,
+
   head: {
-    title: 'plantweb',
+    title: 'Kenneth Blondeel - frontend developer',
     htmlAttrs: {
       lang: 'en',
     },
@@ -48,4 +50,4 @@ export default {
   styleResources: {
     scss: ['./assets/styles/scss/resources.scss'],
   },
-}
+};
