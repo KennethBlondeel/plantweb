@@ -2,6 +2,7 @@
   <div class="web-body">
     <GlobalHeader />
     <div class="main-body">
+      <AdminHeader />
       <Nuxt />
       <Notify />
     </div>
@@ -10,10 +11,11 @@
 
 <script>
 import GlobalHeader from '~/components/GlobalHeader.vue';
+import AdminHeader from '~/components/AdminHeader.vue';
 import Notify from '~/components/Notify';
 export default {
   name: 'GlobalLayout',
-  components: { GlobalHeader, Notify },
+  components: { GlobalHeader, Notify, AdminHeader },
 };
 </script>
 
@@ -33,7 +35,7 @@ html {
   display: flex;
 }
 .main-body {
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
 }
 *,
@@ -69,14 +71,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
-@media (max-width: 1350px) {
-  .web-body {
-    display: flex;
-    flex-direction: column;
-  }
-  .main-body {
-    height: unset;
-  }
 }
 </style>

@@ -27,8 +27,8 @@ export default {
   fetch() {
     return this.fetchplants();
   },
-  created(){
-      this.fetchplants()
+  created() {
+    this.fetchplants();
   },
   methods: {
     fetchplants() {
@@ -37,11 +37,10 @@ export default {
         headers: {},
         params: {
           fields: '*,images.*',
-          filter:{ status: { _eq: "published" } },
+          filter: { status: { _eq: 'published' } },
         },
       })
         .then((response) => {
-          console.log(response);
           this.plantData = response.data.data;
         })
         .catch((err) => {
@@ -53,29 +52,29 @@ export default {
 </script>
 
 <style lang="css">
-.p-all-plants{
+.p-all-plants {
   width: 100%;
   height: 100vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;  
+  padding: 1em;
 }
-.p-all-plants__title{
+.p-all-plants__title {
   width: 100%;
 }
-.p-all-plants__product-list{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    padding:  0 4em ;
-    overflow-y: scroll;
+.p-all-plants__product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  padding: 0 4em;
+  overflow-y: scroll;
 }
 
-.p-all-plants__product-list__item{
-      box-shadow: 0 5px 1.7px rgb(0 0 0 / 1%), 0 5.5px 2.4px rgb(0 0 0 / 2%),
-  0 8.2px 3.6px rgb(0 0 0 / 3%), 0 1.8px 3.6px rgb(0 0 0 / 4%),
-  0 1.2px 4.4px rgb(0 0 0 / 4%), 0 7px 8px rgb(0 0 0 / 6%);
-    }
+.p-all-plants__product-list__item {
+  box-shadow: 0 5px 1.7px rgb(0 0 0 / 1%), 0 5.5px 2.4px rgb(0 0 0 / 2%),
+    0 8.2px 3.6px rgb(0 0 0 / 3%), 0 1.8px 3.6px rgb(0 0 0 / 4%),
+    0 1.2px 4.4px rgb(0 0 0 / 4%), 0 7px 8px rgb(0 0 0 / 6%);
+}
 </style>
