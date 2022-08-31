@@ -143,30 +143,4 @@ export default {
     justify-content: initial;
   }
 }
-
-#formulate--contact-1,
-#formulate--contact-2,
-#formulate--contact-3,
-#formulate--contact-4 {
-  width: 100%;
-  height: 30px;
-  border: 1px solid green;
-  border-radius: 5px;
-}
-
-#formulate--contact-5 {
-  width: 100%;
-  height: 70px;
-  border: 1px solid green;
-  border-radius: 5px;
-}
-
-#formulate--contact-1_label,
-#formulate--contact-2_label,
-#formulate--contact-3_label,
-#formulate--contact-4_label,
-#formulate--contact-5_label {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
 </style>
